@@ -8,21 +8,24 @@ EBA3650 Quantitative Economics | BI Norwegian Business School | Spring 2026
 
 ## Project Structure
 
-| File | Description |
-|------|-------------|
-| `gas_welfare_analysis.ipynb` | **Main deliverable** -- full analysis notebook with code, plots, and narrative |
-| `exam_proposal.pdf` | Project proposal (submitted earlier) |
-| `generate_proposal.py` | Script that generates the proposal PDF |
-| `build_notebook.py` | Script that generates the notebook from scratch |
+```
+gas_welfare_project/
+├── gas_welfare_analysis.ipynb              ← Full notebook (the deliverable)
+├── exam_proposal.pdf                       ← Submitted project proposal
+├── README.md
+├── member_1/
+│   └── section3_gas_market.ipynb           ← Partial equilibrium, equilibrium solving, PS
+├── member_2/
+│   └── section4_consumer_welfare.ipynb     ← Quasi-linear utility, CV, household welfare
+├── member_3/
+│   └── section5_petroleum_tax.ipynb        ← Tax decomposition, Ramsey, "who gains?"
+└── member_4/
+    └── sections_integration.ipynb          ← Intro, background, sensitivity, conclusion
+```
 
 ## How to Run
 
 ```bash
-# Open the notebook
-jupyter notebook gas_welfare_analysis.ipynb
-
-# Or regenerate from scratch
-python3 build_notebook.py
 jupyter notebook gas_welfare_analysis.ipynb
 ```
 
@@ -39,17 +42,21 @@ pip install numpy scipy matplotlib
 
 ## Division of Work
 
-| Member | Section | What to Own |
-|--------|---------|-------------|
-| 1 | Section 3 (Partial Equilibrium Model) | Gas market supply/demand, equilibrium solving, producer surplus |
-| 2 | Section 4 (Consumer Welfare) | Quasi-linear utility, compensating variation, household welfare loss |
-| 3 | Section 5 (Petroleum Tax) | Pigou/Ramsey framing, tax decomposition, per-unit tax comparison |
-| 4 | Sections 1-2, 6-7 (Integration) | Intro, background, sensitivity analysis, conclusion, presentation |
+Each member has their own sub-notebook in `member_X/` that runs independently. Edit your section there, then integrate changes back into the full notebook.
+
+| Member | Folder | Section | What to Own |
+|--------|--------|---------|-------------|
+| 1 | `member_1/` | Section 3 (Partial Equilibrium Model) | Supply/demand, equilibrium solving, producer surplus |
+| 2 | `member_2/` | Section 4 (Consumer Welfare) | Quasi-linear utility, compensating variation, welfare loss |
+| 3 | `member_3/` | Section 5 (Petroleum Tax) | Pigou/Ramsey framing, tax decomposition, distributional analysis |
+| 4 | `member_4/` | Sections 1-2, 6-7 (Integration) | Intro, background, sensitivity analysis, conclusion, presentation |
 
 ## Key Results (Baseline)
 
 - **Pre-war gas price:** 20 EUR/MWh --> **Post-shock:** 43.89 EUR/MWh (+119%)
-- **Norwegian PS gain:** +28.0 bn EUR
+- **Norwegian PS gain (gross):** +28.0 bn EUR
 - **Government revenue gain (78% tax):** +21.8 bn EUR
+- **Firm profit gain (22%):** +6.2 bn EUR
 - **Consumer welfare loss:** -5.0 bn EUR
 - **Net welfare:** +23.0 bn EUR -- **Norway is a net winner**
+- Government could compensate every household **4.3x over** and still be ahead
